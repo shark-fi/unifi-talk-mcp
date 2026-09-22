@@ -1,0 +1,35 @@
+{
+  "name": "unifi-talk-mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server for UniFi Talk (unofficial, reverse-engineered API).",
+  "type": "module",
+  "bin": {
+    "unifi-talk-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && node --test \"dist/**/*.test.js\"",
+    "smoke": "tsc && node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "undici": "^8.10.0",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "typescript": "^6.0.3"
+  },
+  "license": "MIT"
+}
